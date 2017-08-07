@@ -31,7 +31,7 @@
       var cachingPolicy = new CachingPolicy();
       var str = Database.GetDatabase("core").GetItem(new ID(datasource)).Fields["{0AA8B742-BBDF-4405-AB8D-6FAC7E79433B}"].Value;
 
-      NameValueCollection values = HttpUtility.ParseQueryString(Request.RequestUri.Query);
+      NameValueCollection values = HttpUtility.ParseQueryString(base.Request.RequestUri.Query);
       var time = DateTime.ParseExact(values["dateFrom"], "dd-MM-yyyy", new DateTimeFormatInfo());
       var time2 = DateTime.ParseExact(values["dateTo"], "dd-MM-yyyy", new DateTimeFormatInfo());
       var str2 = time.ToString("yyyy-MM-dd");
